@@ -1,0 +1,14 @@
+.subcategoryLinkParent {
+	display: inline-block;
+}
+
+.subcategoryLinkParent a {
+	display: block;
+	padding: 4px 10px 4px 0;
+	margin: 4px 10px 4px 0;
+	font-family: "Domine", serif;
+}
+
+.is_active {
+	font-weight: bold;
+}

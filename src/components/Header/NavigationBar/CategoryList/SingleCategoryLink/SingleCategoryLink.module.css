@@ -1,0 +1,15 @@
+.SingleLink {
+	display: inline-block;
+	width: 16.66%;
+	border: 1px solid black;
+	box-sizing: border-box;
+}
+
+.SingleLink a {
+	font-family: "Domine", serif;
+	font-size: 28px;
+}
+
+.is_active {
+	font-weight: bold;
+}

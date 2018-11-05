@@ -1,0 +1,14 @@
+.Header {
+}
+.HeaderInner {
+	margin: 0 auto;
+	max-width: 90rem;
+}
+.HeaderExternal_isWhite {
+	background-color: #fff;
+}
+.HeaderExternal_isGray {
+	background-color: #f6f6f6;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}

@@ -1,0 +1,11 @@
+.NavigationBar {
+}
+.TopBar {
+	display: flex;
+}
+.TopBarNavs {
+	width: 75%;
+}
+.TopBarLogotype {
+	width: 25%;
+}
