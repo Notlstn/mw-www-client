@@ -14,7 +14,9 @@
 	max-width: 260px;
 	border: 1px solid red;
 }
-
+.itemSpace {
+	margin-right: 10px;
+}
 .itemSpace > div:not(:first-child):not(:last-child) {
 	padding: 5px 0;
 }

@@ -9,6 +9,15 @@
 }
 .CardImage {
 	border: 1px solid red;
-	max-width: 160px;
+	max-width: 125px;
 	width: 100%;
+}
+.cardAnchor {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+	opacity: 0;
 }

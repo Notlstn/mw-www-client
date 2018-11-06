@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import styles from "./HorizontalNewsCard.module.scss";
+import { NavLink } from "react-router-dom";
+
 class HorizontalNewsCard extends Component {
 	render() {
 		return (
@@ -8,12 +10,15 @@ class HorizontalNewsCard extends Component {
 					<img src="http://placehold.jp/238x134.png" alt="as" className="responsive-image" />
 				</div>
 				<div className={styles.CardHeadline}>
-					<h2>
-						<span>Kicker</span>
+					<h4>
+						<span className="kicker wiadomosci">{this.props.category.cat_name}</span>
 						{this.props.title}
-					</h2>
-					<p>{this.props.excerpt}</p>
+					</h4>
+					<p className={styles.CardExcerpt}>{this.props.excerpt}</p>
 				</div>
+				<NavLink to={this.props.slug} className={styles.cardAnchor}>
+					{this.props.title}
+				</NavLink>
 			</div>
 		);
 	}

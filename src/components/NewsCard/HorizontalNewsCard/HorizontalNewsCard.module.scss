@@ -1,6 +1,6 @@
 .HorizontalCard {
 	position: relative;
-	padding: 0 10px;
+	margin: 0 10px;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -9,7 +9,25 @@
 	border: 1px solid red;
 	padding: 5px;
 	height: 100%;
+	position: relative;
+}
+
+.CardExcerpt {
+	position: absolute;
+	bottom: 0;
+	margin: 0;
+	font-size: 14px;
 }
 .CardImage {
 	border: 1px solid red;
+}
+
+.cardAnchor {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+	opacity: 0;
 }
