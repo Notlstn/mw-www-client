@@ -4,6 +4,7 @@ import Layout from "../Layout/Layout";
 import CategoryLeft from "./CategorySection/CategoryLeft/CategoryLeft";
 import CategoryMiddle from "./CategorySection/CategoryMiddle/CategoryMiddle";
 import { getCategoryBySlug } from "../../api/wpApi";
+import { withRouter } from "react-router-dom";
 
 class FrontPage extends Component {
 	constructor(props) {
@@ -18,6 +19,7 @@ class FrontPage extends Component {
 		if (this.state.realCategories.length === 0) {
 			(async () => {
 				const response = await getCategoryBySlug("wiadomosci,kultura,sport,nasze-myki,nasz-fyrtel");
+
 				this.setState({
 					realCategories: response
 				});
@@ -25,18 +27,24 @@ class FrontPage extends Component {
 		}
 	}
 
+	_handlePreviewFetch = () => {};
+
 	render() {
-		console.log(this.state.realCategories);
-		return (
-			<Fragment>
-				<Layout left={<CategoryLeft url="/wiadomosci/" title="Wiadomości" />} middle={<CategoryMiddle />} />
-				<Layout left={<CategoryLeft url="/kultura/" title="Kultura" />} middle={<CategoryMiddle />} />
-				<Layout left={<CategoryLeft url="/sport/" title="Sport" />} middle={<CategoryMiddle />} />
-				<Layout left={<CategoryLeft url="/nasze-myki/" title="Nasze Myki" />} middle={<CategoryMiddle />} />
-				<Layout left={<CategoryLeft url="/nasz-fyrtel/" title="Nasz Fyrtel" />} middle={<CategoryMiddle />} />
-			</Fragment>
-		);
+		let content = null;
+		if (this.state.realCategories.length) {
+			content = this.state.realCategories.map(item => {
+				return (
+					<Layout
+						key={item.id}
+						left={<CategoryLeft category={item} />}
+						middle={<CategoryMiddle category={item} />}
+					/>
+				);
+			});
+		}
+
+		return <Fragment>{content}</Fragment>;
 	}
 }
 
-export default FrontPage;
+export default withRouter(FrontPage);

@@ -4,6 +4,7 @@ import styles from "./NavigationBar.module.css";
 import CategoryList from "./CategoryList/CategoryList";
 import SubcategoryList from "./SubcategoryList/SubcategoryList";
 import { getAppMenu } from "../../../api/wpApi";
+import { NavLink } from "react-router-dom";
 
 import { withRouter } from "react-router-dom";
 
@@ -50,7 +51,9 @@ class NavigationBar extends Component {
 						<div>I poziom</div>
 						<CategoryList links={this.state.categories} />
 					</div>
-					<div className={styles.TopBarLogotype}>Logotyp</div>
+					<div className={styles.TopBarLogotype}>
+						<NavLink to="">Logotyp</NavLink>
+					</div>
 				</div>
 				<SubcategoryList links={this.state.categories} selectedList={this.state.selectedCategory} />
 			</div>

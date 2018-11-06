@@ -1,0 +1,15 @@
+.HorizontalCard {
+	position: relative;
+	padding: 0 10px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.CardHeadline {
+	border: 1px solid red;
+	padding: 5px;
+	height: 100%;
+}
+.CardImage {
+	border: 1px solid red;
+}

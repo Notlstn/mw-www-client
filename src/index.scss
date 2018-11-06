@@ -9,7 +9,7 @@
  */
 
 html {
-	line-height: 1.15; /* 1 */
+	line-height: 1.45; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
 }
 
@@ -23,7 +23,8 @@ html {
 body {
 	margin: 0;
 	font-family: "PT Serif", serif;
-	font-size: 19px;
+	font-size: 18px;
+	color: #111;
 }
 
 /**
@@ -32,16 +33,6 @@ body {
 
 main {
 	display: block;
-}
-
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
-
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
 }
 
 /* Grouping content
@@ -77,6 +68,7 @@ pre {
 
 a {
 	background-color: transparent;
+	color: #111;
 }
 
 /**
@@ -109,14 +101,6 @@ kbd,
 samp {
 	font-family: monospace, monospace; /* 1 */
 	font-size: 1em; /* 2 */
-}
-
-/**
- * Add the correct font size in all browsers.
- */
-
-small {
-	font-size: 80%;
 }
 
 /**
@@ -350,4 +334,87 @@ template {
 
 [hidden] {
 	display: none;
+}
+
+p {
+	margin-bottom: 1.3em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	margin: 0;
+	font-weight: inherit;
+	line-height: 1;
+}
+
+h1 {
+	margin-top: 0;
+	font-size: 1.296em;
+}
+
+h2 {
+	font-size: 1.215em;
+}
+
+h3 {
+	font-size: 1.138em;
+}
+
+h4 {
+	font-size: 1.067em;
+}
+
+small,
+.font_small {
+	font-size: 0.937em;
+}
+
+:global .wiadomosci {
+	&,
+	a:hover,
+	a:focus,
+	a:active {
+		color: #e27d60;
+	}
+}
+:global .kultura {
+	&,
+	a:hover,
+	a:focus,
+	a:active {
+		color: #85cdca;
+	}
+}
+:global .sport {
+	&,
+	a:hover,
+	a:focus,
+	a:active {
+		color: #e8a87c;
+	}
+}
+:global .nasze_myki {
+	&,
+	a:hover,
+	a:focus,
+	a:active {
+		color: #c38d9d;
+	}
+}
+:global .nasz_fyrtel {
+	&,
+	a:hover,
+	a:focus,
+	a:active {
+		color: #c38d9d;
+	}
+}
+
+:global img.responsive-image {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
 }

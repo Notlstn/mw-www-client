@@ -1,0 +1,15 @@
+.bigCard {
+	display: flex;
+	position: relative;
+	padding: 0 10px 0 0;
+}
+.CardHeadline {
+	width: 100%;
+	max-width: 260px;
+	border: 1px solid red;
+	padding: 5px;
+}
+.CardImage {
+	width: 100%;
+	border: 1px solid red;
+}
