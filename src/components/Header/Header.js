@@ -9,7 +9,7 @@ class Header extends Component {
 			<div className={styles.Header}>
 				<div className={styles.HeaderExternal_isWhite}>
 					<div className={styles.HeaderInner}>
-						<div>Reklama</div>
+						<div>{/* <img src="http://placehold.jp/970x250.png" /> */}</div>
 					</div>
 				</div>
 				<div className={styles.HeaderExternal_isGray}>

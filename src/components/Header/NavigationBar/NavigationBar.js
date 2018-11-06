@@ -5,28 +5,42 @@ import CategoryList from "./CategoryList/CategoryList";
 import SubcategoryList from "./SubcategoryList/SubcategoryList";
 import { getAppMenu } from "../../../api/wpApi";
 
+import { withRouter } from "react-router-dom";
+
 class NavigationBar extends Component {
 	state = {
 		categories: [],
 		selectedCategory: 0
 	};
-	componentDidMount() {
-		//TODO: Warunek jeżeli pusta tablica
-		(async () => {
-			const response = await getAppMenu();
-			const firstLink = response.items[0].id;
-			this.setState({
-				categories: response.items,
-				selectedCategory: firstLink
-			});
-		})();
-	}
 
-	_onCategoryLink = selectedCategoryID => {
-		this.setState({
-			selectedCategory: selectedCategoryID
+	componentDidMount() {
+		// Pobieranie zawartości menu głównego strony
+		if (this.state.categories.length === 0) {
+			(async () => {
+				const response = await getAppMenu();
+				const firstLink = response.items[0].id;
+				this.setState({
+					categories: response.items,
+					selectedCategory: firstLink
+				});
+			})();
+		}
+
+		//Obsługa zmiany zawartości podmenu
+		this.props.history.listen(location => {
+			let category = this.state.categories.filter(item => {
+				return item.url === location.pathname;
+			});
+			if (category.length) {
+				category = category[0];
+				if (category.post_parent === 0) {
+					this.setState({
+						selectedCategory: category.id
+					});
+				}
+			}
 		});
-	};
+	}
 
 	render() {
 		return (
@@ -34,7 +48,7 @@ class NavigationBar extends Component {
 				<div className={styles.TopBar}>
 					<div className={styles.TopBarNavs}>
 						<div>I poziom</div>
-						<CategoryList links={this.state.categories} onLinkClick={this._onCategoryLink} />
+						<CategoryList links={this.state.categories} />
 					</div>
 					<div className={styles.TopBarLogotype}>Logotyp</div>
 				</div>
@@ -44,4 +58,4 @@ class NavigationBar extends Component {
 	}
 }
 
-export default NavigationBar;
+export default withRouter(NavigationBar);

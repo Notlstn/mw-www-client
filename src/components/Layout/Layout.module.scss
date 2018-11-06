@@ -1,0 +1,43 @@
+.LayoutWrapper_external {
+	background: Red;
+}
+.LayoutWrapper,
+.LayoutWrapper_inner {
+	display: flex;
+	margin: 0 auto;
+	max-width: 90rem;
+	background: #fff;
+}
+
+.LayoutWrapper > div {
+	border: 1px solid black;
+}
+
+.LeftColumn,
+.MiddleColumn,
+.RightColumn {
+	box-sizing: border-box;
+	padding: 15px;
+}
+.LeftColumn {
+	width: 100%;
+	max-width: 366px;
+}
+.MiddleColumn {
+	width: 100%;
+}
+.RightColumn {
+	width: 100%;
+	max-width: 190px;
+}
+
+.LeftColumn {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin: 0;
+	}
+}
